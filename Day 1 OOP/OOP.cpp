@@ -19,18 +19,17 @@ class PhoneBook{
 		int size;
 		int idx;
 		Contact contact[8];
-		
+
+		int GetIndex(std::string name){
+			int ret = -1;
+			for(int i = 0; i < size ; i++) if( contact[i].nama == name ) ret = i;
+			return ret;
+		}
 	public:
 		PhoneBook(){
 			size = 0;
 			idx = 0;
 			for(auto &c : contact) c = Contact();
-		}
-		
-		int GetIndex(std::string name){
-			int ret = -1;
-			for(int i = 0; i < size ; i++) if( contact[i].nama == name ) ret = i;
-			return ret;
 		}
 		
 		void ADD(){
